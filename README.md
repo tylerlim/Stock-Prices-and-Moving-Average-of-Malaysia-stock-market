@@ -20,6 +20,9 @@ $ pip install yfinance --upgrade --no-cache-dir
 - io
 - base64
 
+## ScreenShot
+![Alt text](https://filedn.com/ljmygPdfy23bwWzbD31G8Xh/screenShot.png)
+
 ### P.S.
 
 Please drop me an note with any feedback you have.
