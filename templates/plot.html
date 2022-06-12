@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>YFinance API</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
+
+      body{
+        display: flex;
+        align-content: center;
+        background-color: #E6E2DE;
+        min-height: 100vh;
+        margin: 0;
+      }
+      
+      #content{
+        text-align: center;
+        margin: auto;
+        padding: 0 10%;
+
+        opacity: 0;
+      }
+
+      h1, h5, a{
+        font-family: Roboto;
+        font-weight: 500;
+        color: #424E4B;
+      }
+      
+      h5{
+        font-weight: 300;
+      }
+    </style>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css" />
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.3.4/gsap.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+  </head>
+  
+  <body>
+    <div id="content">
+      <form action="plot" method = "POST">
+      <select name="StockCodeSelect" method="GET" action="/" >
+        {% for stockCode in StockCodeList %}
+  
+          <option value="{{stockCode.code}}">{{stockCode.name}}</option>
+        {% endfor %}
+      </select>
+      <p><input type = "submit" value = "submit" /></p>
+    </form>
+	<img src="data:image/png;base64, {{ plot_url }}">
+    </div>
+  </body>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      gsap.to('#content', { opacity: 1 });
+    });
+  </script>
+</html>
