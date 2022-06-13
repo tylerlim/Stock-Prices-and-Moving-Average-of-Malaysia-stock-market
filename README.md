@@ -1,4 +1,4 @@
-# Stock-Prices-and-Moving-Average-of-Malaysia-stock-market
+# Stock Prices and Moving Average of Malaysia stock market
 Moving average of Malaysia stock market in Python using Pandas,matplotlib, flask and YFinance
 
 ## Installation
